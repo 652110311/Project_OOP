@@ -10,7 +10,7 @@ public class Payment {
     }
 
     public void displayPayment() {
-        System.out.println("Total Payment: $" + totalPayment);
+        System.out.println("Total Payment : $" + totalPayment);
     }
 }
 
