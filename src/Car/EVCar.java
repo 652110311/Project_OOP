@@ -17,6 +17,7 @@ public class EVCar extends Car{
                 7.Atto 3
                 8.Dolphin
                 9.Seal""");
+        int pick;
     }
 
     @Override
@@ -31,7 +32,7 @@ public class EVCar extends Car{
 
     public static void main(String[] args) {
 
-        EVCar car =new EVCar();
+        EVCar car ;
     }
 
 }
