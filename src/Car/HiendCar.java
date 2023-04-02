@@ -1,6 +1,6 @@
 package Car;
 
-public class HiendCar {
+public class HiendCar extends Car{
     public HiendCar() {
         System.out.println("""
                 \nSport Car
@@ -15,6 +15,16 @@ public class HiendCar {
                 7.BENZ C 220 D AMG
                 8.Audi Q8
                 9.BMW I7""");
+    }
+
+    @Override
+    public String getDesp() {
+        return null;
+    }
+
+    @Override
+    public double getCost() {
+        return 0;
     }
 
     public static void main(String[] args) {

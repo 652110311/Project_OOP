@@ -1,6 +1,6 @@
 package Car;
 
-public class EVCar {
+public class EVCar extends Car{
     public EVCar() {
         System.out.println("""
                 \nTesla
@@ -19,7 +19,18 @@ public class EVCar {
                 9.Seal""");
     }
 
+    @Override
+    public String getDesp() {
+        return null;
+    }
+
+    @Override
+    public double getCost() {
+        return 0;
+    }
+
     public static void main(String[] args) {
+
         EVCar car =new EVCar();
     }
 
