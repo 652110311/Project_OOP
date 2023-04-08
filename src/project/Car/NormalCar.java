@@ -1,4 +1,4 @@
-package Car;
+package project.Car;
 
 public class NormalCar extends Car{
     public NormalCar() {

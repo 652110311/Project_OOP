@@ -1,4 +1,4 @@
-package Customer;
+package project.Customer;
 
 public abstract class Customer {
         private String name;

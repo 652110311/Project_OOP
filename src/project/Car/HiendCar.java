@@ -1,4 +1,4 @@
-package Car;
+package project.Car;
 
 public class HiendCar extends Car{
     public HiendCar() {
@@ -28,6 +28,6 @@ public class HiendCar extends Car{
     }
 
     public static void main(String[] args) {
-        HiendCar car = new HiendCar();
+        HiendCar project = new HiendCar();
     }
 }

@@ -1,7 +1,9 @@
-package Car;
+package project.Car.CarAccessory;
 
-public class PickupTruck extends Car{
-    public PickupTruck() {
+import project.Car.Car;
+
+public class CarAccessories extends Car {
+    public CarAccessories() {
         super();
     }
 

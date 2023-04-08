@@ -1,6 +1,6 @@
-package Car.CarAccessory;
+package project.Car.CarAccessory;
 
-import Car.Car;
+import project.Car.Car;
 
 public class Exhaust extends CarAccessories{
     public Exhaust(Car car) {

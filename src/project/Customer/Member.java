@@ -1,4 +1,4 @@
-package Customer;
+package project.Customer;
 public class Member extends Customer {
     private double discount;
     private String status;

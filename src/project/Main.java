@@ -1,10 +1,14 @@
-import Customer.Customer;
+package project;
+
+import project.Customer.Customer;
+import project.Customer.Member;
+import project.Customer.NonMember;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
-import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +19,11 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         System.out.println("---------------------------------------");
-        System.out.println("==== Welcome to car rental program ====");
+        System.out.println("==== Welcome to car rental program ====\n" +
+                "1.Rent a car\n" +
+                "2.exit\n" +
+                "Select number[1,2] :");
+
         System.out.print(" Customer's name :  ");
         String name = input.next();
         System.out.print(" Phone Number  :  ");
@@ -28,6 +36,7 @@ public class Main {
                 "2.No,I am satisfied with  non-member.\n" +
                 "Select number[1,2] : ");
             String choice = input.next();
+            Customer customer = null;
 
                 if(choice.equals("1"))
                 {
@@ -37,8 +46,17 @@ public class Main {
                     String email = input.next();
                     System.out.print(" Enter address  :  ");
                     String address = input.next();
-                    //Customer member = new Member();
+                    customer = new Member(name,phone,email,address);
+                    System.out.println("---------You are a "+customer.getStatus()+" and you can have discount "+(customer.getDiscount()*100)+"%");
                 }
+                else if (choice.equals("2"))
+                {
+                    customer = new NonMember(name,phone);
+                    System.out.println("---------You are a "+customer.getStatus()+" and you can have discount "+(customer.getDiscount()*100)+"%");
+                }
+
+        System.out.println("---------------------------------------");
+
 
 
 

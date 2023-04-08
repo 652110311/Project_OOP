@@ -1,4 +1,4 @@
-package rent;
+package project.rent;
 
 public class rent {
 }

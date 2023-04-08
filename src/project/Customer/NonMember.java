@@ -1,4 +1,4 @@
-package Customer;
+package project.Customer;
 public class NonMember extends Customer {
     private String status;
 

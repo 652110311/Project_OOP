@@ -1,4 +1,4 @@
-package Car;
+package project.Car;
 
 public abstract class Car {
     protected String carType;

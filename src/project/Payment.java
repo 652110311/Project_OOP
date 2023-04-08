@@ -1,3 +1,5 @@
+package project;
+
 public class Payment {
     private int day;
     private double costPerDay;
@@ -10,7 +12,7 @@ public class Payment {
     }
 
     public void displayPayment() {
-        System.out.println("Rent day : "+day + "\nCost per Day : "+costPerDay + "\nTotal Payment : "+totalPayment);
+        System.out.println("Rent day : "+day + "\nCost per Day : "+costPerDay + "\nTotal java.Payment : "+totalPayment);
     }
 }
 
