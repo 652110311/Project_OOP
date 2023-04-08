@@ -18,9 +18,13 @@ public abstract class Customer {
                 this.address = address;
         }
 
-        public abstract String getName();
+        public  String getName() { return name;
+        }
 
-        public abstract String getPhone();
+
+        public  String getPhone() {
+                return phone;
+        }
 
         public abstract String getStatus();
 

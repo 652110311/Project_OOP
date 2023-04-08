@@ -4,8 +4,7 @@ public class Member extends Customer {
     private String status;
     private String customerEmail;
     private String customerAddress;
-    private String customername;
-    private String customerphone;
+
 
     public Member(String name, String phone, String email, String address) {
         super(name, phone, email, address);
@@ -15,15 +14,7 @@ public class Member extends Customer {
         this.customerAddress = address;
     }
 
-    @Override
-    public String getName() {
-        return this.customername;
-    }
 
-    @Override
-    public String getPhone() {
-        return this.customerphone;
-    }
 
     public double getDiscount() {
         return this.discount;
