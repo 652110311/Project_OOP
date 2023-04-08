@@ -3,7 +3,23 @@ package Customer;
 public abstract class Customer {
         private String name;
         private String phone;
-        public Customer() {
-            
+        private String email;
+        private String address;
+
+        public Customer(String name, String phone) {
+                this.name = name;
+                this.phone = phone;
         }
+
+        public Customer(String name, String phone, String email, String address) {
+                this.name = name;
+                this.phone = phone;
+                this.email = email;
+                this.address = address;
+        }
+
+        public abstract String getStatus();
+
+        public abstract double getDiscount();
 }
+
