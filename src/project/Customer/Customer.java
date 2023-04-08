@@ -18,8 +18,13 @@ public abstract class Customer {
                 this.address = address;
         }
 
+        public abstract String getName();
+
+        public abstract String getPhone();
+
         public abstract String getStatus();
 
         public abstract double getDiscount();
+
 }
 
