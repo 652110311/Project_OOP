@@ -1,6 +1,6 @@
 package project.Car;
 
-public class HiendCar extends Car{
+public class HiendCar extends Car {
     public HiendCar() {
         System.out.println("""
                 \nSport Car

@@ -1,12 +1,21 @@
 package project.Car;
 
 public abstract class Car {
+    String description=" Unknown ";
+    String pick;
     protected String carType;
     protected double carPricePerday;
-    public Car() {
 
+    public void setPick(String pick1){
+        this.pick = pick1;
     }
-    public abstract String getDesp();
+    public  String getDesp(){
+        return description;
+    }
 
     public abstract double getCost();
-}
+
+    }
+
+
+

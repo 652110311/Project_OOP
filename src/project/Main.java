@@ -1,6 +1,13 @@
 package project;
 
 import project.Car.*;
+import project.Car.EVCar;
+import project.Car.HiendCar;
+import project.Car.NormalCar;
+import project.Car.PickupTruck;
+import project.CarAccessory.Exhaust;
+import project.CarAccessory.Wheels;
+import project.CarAccessory.Wrap;
 import project.Customer.Customer;
 import project.Customer.Member;
 import project.Customer.NonMember;
@@ -58,15 +65,21 @@ public class Main {
                         "\nPhone number : " + customer.getPhone() +
                         "\nStatus : " + customer.getStatus() +
                         "\nDiscount : " + (customer.getDiscount()*100)+"%");
+
                 System.out.println("---------------------------------------");
                 System.out.println("What kind of car do you want? \n" +
-                        "1.HiEnd Car \n" +
-                        "2.Pickup Truck\n" +
-                        "3.Normal Car\n" +
+                       // "1.HiEnd Car \n" +
+                        //"2.Pickup Truck\n" +
+                       // "3.Normal Car\n" +
                         "4.Electric Vehicle\n" +
                         "Select number[1-4] :");
-                choice =input.next();
-                Car car = null;
+                         choice =input.next();
+
+
+                Car car=null;
+                Menu menu = new Menu();
+
+
                         if(choice.equals("1")) {
                             car = new HiendCar();
 
@@ -80,8 +93,45 @@ public class Main {
                         }
                         else if(choice.equals("4"))
                         {
+
+                            menu.menuList("4");
                             car = new EVCar();
+
                         }
+                System.out.println("Select Car's Brand that you want to rent : ");
+                        choice = input.next();
+                        car.setPick(choice);
+
+
+                System.out.println("Do you want to add Car's accessory?? : \n1.yes\n2.No");
+                            choice = input.next();
+                            if(choice.equals("1"))
+                            {
+                                do {
+                                    menu.acces();
+                                    choice=input.next();
+
+                                    if(choice.equals("1"))
+                                    {
+                                        car = new Exhaust(car);
+                                    } else if (choice.equals("2"))
+                                    {
+                                        car = new Wheels(car);
+                                    }
+                                    else if (choice.equals("3"))
+                                    {
+                                        car = new Wrap(car);
+                                    }
+                                    else if(choice.equals("4")){
+                                        break;
+                                    }
+                                }while (true);
+
+                            }
+                            System.out.println("Customer's name : "+customer.getName()
+                                    +"\nCar rental : "+car.getDesp()+
+                                    "\nCost : "+car.getCost());
+
                 System.out.println("---------------------------------------");
 
         }

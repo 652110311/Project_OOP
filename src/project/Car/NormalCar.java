@@ -1,6 +1,8 @@
 package project.Car;
 
-public class NormalCar extends Car{
+import project.Car.Car;
+
+public class NormalCar extends Car {
     public NormalCar() {
         System.out.println("""
                 \nMazda

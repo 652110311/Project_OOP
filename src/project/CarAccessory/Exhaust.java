@@ -1,18 +1,21 @@
-package project.Car.CarAccessory;
+package project.CarAccessory;
 
 import project.Car.Car;
 
 public class Exhaust extends CarAccessories{
+    Car car;
     public Exhaust(Car car) {
-
+        this.car=car;
     }
     @Override
     public String getDesp() {
-        return super.getDesp();
+        return this.car.getDesp()+" Exhaust ";
     }
 
     @Override
     public double getCost() {
-        return super.getCost();
+        return 200+car.getCost();
     }
+
+
 }
