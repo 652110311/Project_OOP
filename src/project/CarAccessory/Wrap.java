@@ -2,7 +2,7 @@ package project.CarAccessory;
 
 import project.Car.Car;
 
-public class Wrap extends CarAccessories{
+public abstract class Wrap extends CarAccessories{
     Car car;
     public Wrap(Car car) {
         this.car=car;
@@ -13,6 +13,11 @@ public class Wrap extends CarAccessories{
     }
     @Override
     public double getCost() {
-        return this.car.getCost()+2000;
+        return this.car.getCost()+8000;
+    }
+
+    @Override
+    public void setbrand(String pick) {
+
     }
 }

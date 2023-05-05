@@ -2,7 +2,7 @@ package project.CarAccessory;
 
 import project.Car.Car;
 
-public class Exhaust extends CarAccessories{
+public abstract class Exhaust extends CarAccessories{
     Car car;
     public Exhaust(Car car) {
         this.car=car;
@@ -14,7 +14,7 @@ public class Exhaust extends CarAccessories{
 
     @Override
     public double getCost() {
-        return 200+car.getCost();
+        return 30000+car.getCost();
     }
 
 
