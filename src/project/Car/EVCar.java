@@ -1,22 +1,28 @@
 package project.Car;
 
-import project.Car.Car;
-
 public class EVCar extends Car {
-    String pick;
-    String brand;
+    protected String pick;
+    protected String brand;
 
     public EVCar() {
-
-
+        System.out.println("EV Car" +
+                "1. Tesla Model 3" +
+                "2. Tesla Model Y" +
+                "3. Tesla Model S" +
+                "4. GWM Ora Good cat" +
+                "5. GWM Haval H6" +
+                "6. GWM Ora Grand cat" +
+                "7. BYD Atto 3" +
+                "8. BYD Dolphin" +
+                "9. BYD Seal");
     }
-
     public void setPick(String pick1){
         super.setPick(pick1);
         setbrand(pick1);
 
     }
     public void setbrand (String pick) {
+        this.pick = pick;
         switch (pick) {
             case "1" -> brand = " EV Car Tesla Model 3";
             case "2" -> brand = " EV Car Tesla Model Y";

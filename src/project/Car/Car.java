@@ -2,7 +2,7 @@ package project.Car;
 
 public abstract class Car {
     String description = " Unknown ";
-    String pick;
+    protected String pick;
     protected String carType;
     protected double carPricePerday;
 

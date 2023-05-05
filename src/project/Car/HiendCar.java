@@ -1,8 +1,8 @@
 package project.Car;
 
 public class HiendCar extends Car {
-    String pick;
-    String brand;
+    protected String pick;
+    protected String brand;
     public HiendCar() {
         System.out.println("""
                 \nSport Car
@@ -18,25 +18,18 @@ public class HiendCar extends Car {
                 8.Audi Q8
                 9.BMW I7""");
     }
-
     @Override
     public String getDesp() {
 
         return brand;
     }
-
     @Override
     public double getCost() {
         return 10000;
     }
-
-    public static void main(String[] args) {
-
-        HiendCar project = new HiendCar();
-    }
-
     @Override
     public void setbrand(String pick) {
+        this.pick = pick;
         switch (pick) {
             case "1" -> brand = " 1.Toyota GR Supra";
             case "2" -> brand = " 2.Porsche 718 Boxster";

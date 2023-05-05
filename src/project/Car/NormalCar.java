@@ -1,24 +1,23 @@
 package project.Car;
 
-import project.Car.Car;
-
 public class NormalCar extends Car {
-    String pick;
-    String brand;
+    protected String pick;
+    protected String brand;
     public NormalCar() {
+
         System.out.println("""
                 \nMazda
                 -Mazda 3
                 -Mazda cx 5
                 -Mazda cx30
                 \nToyota
-                -Yaris
-                -Vios
-                -Camry
+                -Toyota Yaris
+                -Toyota Vios
+                -Toyota Camry
                 \nHonda
-                  -City
-                  -Accord
-                  -Civic""");
+                  -Honda City
+                  -Honda Accord
+                  -Honda Civic""");
     }
 
     @Override
@@ -33,6 +32,17 @@ public class NormalCar extends Car {
 
     @Override
     public void setbrand(String pick) {
-
+        this.pick = pick;
+        switch (pick) {
+            case "1" -> brand = " Mazda 3";
+            case "2" -> brand = " Mazda cx 5";
+            case "3" -> brand = " Mazda cx30";
+            case "4" -> brand = " Toyota Yaris";
+            case "5" -> brand = " Toyota Vios";
+            case "6" -> brand = " Toyota Camry";
+            case "7" -> brand = " Honda City";
+            case "8" -> brand = " Honda Accord";
+            case "9" -> brand = " Honda Civic ";
+        }
     }
 }

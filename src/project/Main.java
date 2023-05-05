@@ -12,18 +12,18 @@ import project.Customer.Customer;
 import project.Customer.Member;
 import project.Customer.NonMember;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+//import java.text.DateFormat;
+//import java.text.SimpleDateFormat;
+//import java.util.Date;
 import java.util.Scanner;
 
 
 public class Main {
     public static void main(String[] args) {
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        Date currentDate = new Date();
-        System.out.println(currentDate);
-        System.out.println("Potter here");
+        //DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        //Date currentDate = new Date();
+       // System.out.println(currentDate);
+        //System.out.println("Potter here");
 
         Scanner input = new Scanner(System.in);
 
@@ -75,11 +75,8 @@ public class Main {
                         "Select number[1-4] :");
                          choice =input.next();
 
-
                 Car car=null;
                 Menu menu = new Menu();
-
-
                         if(choice.equals("1")) {
                             car = new HiendCar();
 
