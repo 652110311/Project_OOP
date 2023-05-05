@@ -3,6 +3,8 @@ package project.Car;
 import project.Car.Car;
 
 public class NormalCar extends Car {
+    String pick;
+    String brand;
     public NormalCar() {
         System.out.println("""
                 \nMazda
@@ -21,11 +23,16 @@ public class NormalCar extends Car {
 
     @Override
     public String getDesp() {
-        return null;
+        return brand;
     }
 
     @Override
     public double getCost() {
-        return 0;
+        return 2000;
+    }
+
+    @Override
+    public void setbrand(String pick) {
+
     }
 }

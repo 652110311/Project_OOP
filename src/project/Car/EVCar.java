@@ -13,29 +13,20 @@ public class EVCar extends Car {
 
     public void setPick(String pick1){
         super.setPick(pick1);
-        brand(pick1);
+        setbrand(pick1);
 
     }
-    public void brand (String pick) {
-        if(pick.equals("1"))
-        {
-            brand = " EV Car Tesla Model 3";
-        } else if (pick.equals("2")) {
-            brand=" EV Car Tesla Model Y";
-        }else if (pick.equals("3")) {
-            brand=" EV Car Tesla Model S";
-        }else if (pick.equals("4")) {
-            brand= " EV Car GWM Ora Good cat";
-        }else if (pick.equals("5")) {
-            brand= " EV Car GWM Haval H6";
-        }else if (pick.equals("6")) {
-            brand= " EV Car GWM Ora Grand cat";
-        }else if (pick.equals("7")) {
-            brand= " EV Car BYD Atto 3";
-        }else if (pick.equals("8")) {
-            brand= " EV Car BYD Dolphin";
-        }else if (pick.equals("9")) {
-            brand= " EV Car BYD Seal ";
+    public void setbrand (String pick) {
+        switch (pick) {
+            case "1" -> brand = " EV Car Tesla Model 3";
+            case "2" -> brand = " EV Car Tesla Model Y";
+            case "3" -> brand = " EV Car Tesla Model S";
+            case "4" -> brand = " EV Car GWM Ora Good cat";
+            case "5" -> brand = " EV Car GWM Haval H6";
+            case "6" -> brand = " EV Car GWM Ora Grand cat";
+            case "7" -> brand = " EV Car BYD Atto 3";
+            case "8" -> brand = " EV Car BYD Dolphin";
+            case "9" -> brand = " EV Car BYD Seal ";
         }
 
     }
@@ -45,9 +36,11 @@ public class EVCar extends Car {
         return brand;
     }
         public double getCost () {
-            return 1000;
+
+        return 1000;
         }
 
-    }
+}
+
 
 

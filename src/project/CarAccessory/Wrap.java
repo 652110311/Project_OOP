@@ -11,7 +11,6 @@ public class Wrap extends CarAccessories{
     public String getDesp() {
         return this.car.getDesp()+" Wrap ";
     }
-
     @Override
     public double getCost() {
         return this.car.getCost()+2000;

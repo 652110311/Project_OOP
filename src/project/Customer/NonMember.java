@@ -10,10 +10,12 @@ public class NonMember extends Customer {
 
 
     public String getStatus() {
+
         return this.status;
     }
 
     public double getDiscount() {
+
         return 0.0;
     }
 }
