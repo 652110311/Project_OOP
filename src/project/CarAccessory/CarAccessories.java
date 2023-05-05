@@ -2,12 +2,17 @@ package project.CarAccessory;
 
 import project.Car.Car;
 
-public abstract class CarAccessories extends Car {
+public  class CarAccessories extends Car {
 
     @Override
-    public abstract String getDesp() ;
+    public String getDesp() {
+        return null;
+    }
 
-
+    @Override
+    public double getCost() {
+        return 0;
+    }
 
 }
 

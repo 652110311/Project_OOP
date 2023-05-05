@@ -2,7 +2,7 @@ package project.CarAccessory;
 
 import project.Car.Car;
 
-public abstract class Wheels extends CarAccessories{
+public class Wheels extends CarAccessories{
     Car car;
     public Wheels(Car car) {
             this.car=car;

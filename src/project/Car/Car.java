@@ -18,7 +18,9 @@ public abstract class Car {
     public abstract double getCost();
 
 
-    public abstract void setbrand(String pick);
+    public void setbrand(String pick) {
+
+    }
 }
 
 
