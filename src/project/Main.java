@@ -68,11 +68,11 @@ public class Main {
 
                 System.out.println("---------------------------------------");
                 System.out.println("What kind of car do you want? \n" +
-                       // "1.HiEnd Car \n" +
-                        //"2.Pickup Truck\n" +
-                       // "3.Normal Car\n" +
-                        "4.Electric Vehicle\n" +
-                        "Select number[1-4] :");
+                      "1.HiEnd Car \n" +
+                      "2.Pickup Truck\n" +
+                      "3.Normal Car\n" +
+                      "4.Electric Vehicle\n" +
+                      "Select number[1-4] :");
                          choice =input.next();
 
                 Car car=null;
@@ -90,8 +90,6 @@ public class Main {
                         }
                         else if(choice.equals("4"))
                         {
-
-                            menu.menuList("4");
                             car = new EVCar();
 
                         }
@@ -127,9 +125,16 @@ public class Main {
                             }
                             System.out.println("Customer's name : "+customer.getName()
                                     +"\nCar rental : "+car.getDesp()+
-                                    "\nCost : "+car.getCost());
+                                    "\nCost : "+car.getCost()+" BAHT");
 
                 System.out.println("---------------------------------------");
+                //มัดจำ
+                // เช่ากี่วัน
+                System.out.println("Enter the number of days you want to rent : ");
+                int day = input.nextInt();
+                Payment pay = new Payment(day, car.getCost());
+                pay.displayPayment();
+
 
         }
 

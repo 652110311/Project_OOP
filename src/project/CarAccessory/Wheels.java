@@ -9,7 +9,7 @@ public class Wheels extends CarAccessories{
         }
         @Override
         public String getDesp() {
-            return this.car.getDesp()+" Wheels ";
+            return this.car.getDesp()+", Wheels ";
         }
 
         @Override

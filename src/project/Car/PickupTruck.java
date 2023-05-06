@@ -19,6 +19,10 @@ public class PickupTruck extends Car {
                   -Nissan NP300 KING CAB
                   -Ford HI-RIDER FX4 2.2""");
     }
+    public void setPick(String pick){
+        super.setPick(pick);
+        setbrand(pick);
+    }
 
     @Override
     public String getDesp() {

@@ -18,6 +18,10 @@ public class HiendCar extends Car {
                 8.Audi Q8
                 9.BMW I7""");
     }
+    public void setPick(String pick){
+        super.setPick(pick);
+        setbrand(pick);
+    }
     @Override
     public String getDesp() {
 

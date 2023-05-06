@@ -16,10 +16,9 @@ public class EVCar extends Car {
                 "8. BYD Dolphin" +
                 "9. BYD Seal");
     }
-    public void setPick(String pick1){
-        super.setPick(pick1);
-        setbrand(pick1);
-
+    public void setPick(String pick){
+        super.setPick(pick);
+        setbrand(pick);
     }
     public void setbrand (String pick) {
         this.pick = pick;

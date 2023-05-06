@@ -9,7 +9,7 @@ public class Exhaust extends CarAccessories{
     }
     @Override
     public String getDesp() {
-        return this.car.getDesp()+" Exhaust ";
+        return this.car.getDesp()+", Exhaust ";
     }
 
     @Override

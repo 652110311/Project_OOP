@@ -19,7 +19,10 @@ public class NormalCar extends Car {
                   -Honda Accord
                   -Honda Civic""");
     }
-
+    public void setPick(String pick){
+        super.setPick(pick);
+        setbrand(pick);
+    }
     @Override
     public String getDesp() {
         return brand;
