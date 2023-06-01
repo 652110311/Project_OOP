@@ -5,6 +5,7 @@ import project.Car.EVCar;
 import project.Car.HiendCar;
 import project.Car.NormalCar;
 import project.Car.PickupTruck;
+import project.CarAccessory.CarAccessories;
 import project.CarAccessory.Exhaust;
 import project.CarAccessory.Wheels;
 import project.CarAccessory.Wrap;
@@ -76,7 +77,7 @@ public class Main {
                          choice =input.next();
 
                 Car car=null;
-                Menu menu = new Menu();
+
                         if(choice.equals("1")) {
                             car = new HiendCar();
 
@@ -103,7 +104,13 @@ public class Main {
                             if(choice.equals("1"))
                             {
                                 do {
-                                    menu.acces();
+                                    System.out.println("""
+                                        \n
+                                        1.Exhaust
+                                        2.Wheels
+                                        3.Wrap
+                                        4.exit
+                                        Select : """);
                                     choice=input.next();
 
                                     if(choice.equals("1"))
@@ -132,9 +139,10 @@ public class Main {
                 // เช่ากี่วัน
                 System.out.println("Enter the number of days you want to rent : ");
                 int day = input.nextInt();
-                Payment pay = new Payment(day, car.getCost());
-                pay.displayPayment();
+                Payment pay = new Payment(day, car.getCost(),customer.getDiscount());
 
+                pay.displayPayment();
+                 System.out.println("---------------------------------------");
 
         }
 

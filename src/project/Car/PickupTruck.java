@@ -7,17 +7,17 @@ public class PickupTruck extends Car {
 
         System.out.println("""
                 \nFor drag race
-                -Isuzu D-Max\s
-                -Mitsubishi Triton\s
-                -Chevrolet Colorado
+                1.Isuzu D-Max\s
+                2.Mitsubishi Triton\s
+                3.Chevrolet Colorado
                 \nFor go trip
-                -Toyota Hilux Revo
-                -Nissan Navara PRO-4X
-                -Ford Ranger Raptor
+                4.Toyota Hilux Revo
+                5.Nissan Navara PRO-4X
+                6.Ford Ranger Raptor
                 \nFor event
-                  -Toyota Vigo
-                  -Nissan NP300 KING CAB
-                  -Ford HI-RIDER FX4 2.2""");
+                7.Toyota Vigo
+                8.Nissan NP300 KING CAB
+                9.Ford HI-RIDER FX4 2.2""");
     }
     public void setPick(String pick){
         super.setPick(pick);
@@ -38,15 +38,15 @@ public class PickupTruck extends Car {
     public void setbrand(String pick) {
         this.pick = pick;
         switch (pick) {
-            case "1" -> brand = " 1.Isuzu D-Max";
-            case "2" -> brand = " 2.Mitsubishi Triton";
-            case "3" -> brand = " 3.Chevrolet Colorado";
-            case "4" -> brand = " 4.Toyota Hilux Revo";
-            case "5" -> brand = " 5.Nissan Navara PRO-4X";
-            case "6" -> brand = " 6.Ford Ranger Raptor";
-            case "7" -> brand = " 7.Toyota Vigo";
-            case "8" -> brand = " 8.Nissan NP300 KING CAB";
-            case "9" -> brand = " 9.Ford HI-RIDER FX4 2.2";
+            case "1" -> brand = " Isuzu D-Max";
+            case "2" -> brand = " Mitsubishi Triton";
+            case "3" -> brand = " Chevrolet Colorado";
+            case "4" -> brand = " Toyota Hilux Revo";
+            case "5" -> brand = " Nissan Navara PRO-4X";
+            case "6" -> brand = " Ford Ranger Raptor";
+            case "7" -> brand = " Toyota Vigo";
+            case "8" -> brand = " Nissan NP300 KING CAB";
+            case "9" -> brand = " Ford HI-RIDER FX4 2.2";
         }
     }
 }

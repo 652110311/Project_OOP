@@ -6,15 +6,15 @@ public class EVCar extends Car {
 
     public EVCar() {
         System.out.println("EV Car" +
-                "1. Tesla Model 3" +
-                "2. Tesla Model Y" +
-                "3. Tesla Model S" +
-                "4. GWM Ora Good cat" +
-                "5. GWM Haval H6" +
-                "6. GWM Ora Grand cat" +
-                "7. BYD Atto 3" +
-                "8. BYD Dolphin" +
-                "9. BYD Seal");
+                "\n1. Tesla Model 3" +
+                "\n2. Tesla Model Y" +
+                "\n3. Tesla Model S" +
+                "\n4. GWM Ora Good cat" +
+                "\n5. GWM Haval H6" +
+                "\n6. GWM Ora Grand cat" +
+                "\n7. BYD Atto 3" +
+                "\n8. BYD Dolphin" +
+                "\n9. BYD Seal");
     }
     public void setPick(String pick){
         super.setPick(pick);

@@ -7,17 +7,17 @@ public class NormalCar extends Car {
 
         System.out.println("""
                 \nMazda
-                -Mazda 3
-                -Mazda cx 5
-                -Mazda cx30
+                1.Mazda 3
+                2.Mazda cx 5
+                3.Mazda cx30
                 \nToyota
-                -Toyota Yaris
-                -Toyota Vios
-                -Toyota Camry
+                4.Toyota Yaris
+                5.Toyota Vios
+                6.Toyota Camry
                 \nHonda
-                  -Honda City
-                  -Honda Accord
-                  -Honda Civic""");
+                7.Honda City
+                8.Honda Accord
+                9.Honda Civic""");
     }
     public void setPick(String pick){
         super.setPick(pick);
