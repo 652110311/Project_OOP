@@ -30,5 +30,24 @@ public abstract class Customer {
 
         public abstract double getDiscount();
 
+        public void getDescribe()
+        {
+                System.out.println("---------------------------------------");
+                System.out.println("Customer's name : " + getName() +
+                        "\nPhone number : " + getPhone() +
+                        "\nStatus : " + getStatus() +
+                        "\nDiscount : " + (getDiscount()*100)+"%");
+        }
+        public void getCarTypeMenu()
+        {
+                System.out.println("---------------------------------------");
+                System.out.println("What kind of car do you want? \n" +
+                        "1.HiEnd Car \n" +
+                        "2.Pickup Truck\n" +
+                        "3.Normal Car\n" +
+                        "4.Electric Vehicle\n" +
+                        "Select number[1-4] :");
+        }
+
 }
 

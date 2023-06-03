@@ -33,7 +33,7 @@ public class NormalCar extends Car {
         return 2000;
     }
 
-    @Override
+
     public void setbrand(String pick) {
         this.pick = pick;
         switch (pick) {

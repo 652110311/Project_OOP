@@ -5,15 +5,18 @@ import project.Car.Car;
 public  class CarAccessories extends Car {
 
  public CarAccessories() {
-     System.out.println("""
+
+ }
+public void getCarAccesMenu()
+{
+    System.out.println("""
                     \n
                     1.Exhaust
                     2.Wheels
                     3.Wrap
                     4.exit
                     Select : """);
- }
-
+}
 
     @Override
     public double getCost() {
