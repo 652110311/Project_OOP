@@ -18,7 +18,8 @@ public abstract class Customer {
                 this.address = address;
         }
 
-        public  String getName() { return name;
+        public  String getName() {
+                return name;
         }
 
 

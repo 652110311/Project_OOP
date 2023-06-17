@@ -4,7 +4,6 @@ public class Deposit {
     private String choice;
     double price;
     public Deposit(String choice){
-
         this.choice=choice;
     }
 

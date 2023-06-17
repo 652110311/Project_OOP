@@ -1,4 +1,4 @@
-package project;
+package project.PotterTest;
 
 import project.Car.*;
 import project.CarAccessory.CarAccessories;
@@ -11,27 +11,72 @@ import project.Customer.NonMember;
 import project.Rent.Deposit;
 import project.Rent.Payment;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Calendar;
 
 
-public class Main {
+public class MainPotter {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 //        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 //        Date currentDate = new Date();
 //         System.out.println(currentDate);
 //        System.out.println("Potter here");
-        Scanner input = new Scanner(System.in);
+        // Create a Calendar instance
+        Calendar calendar = Calendar.getInstance();
+
+        // Set the date to the current date
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int dayy = 1; // Start from day 1
+
+        // Set the calendar to the desired month
+        calendar.set(year, month, dayy);
+
+        // Get the number of days in the month
+        int numDays = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+        // Get the day of the week of the first day in the month
+        int startDay = calendar.get(Calendar.DAY_OF_WEEK);
+
+        // Print the calendar header
+        System.out.println("  S  M  T  W  T  F  S");
+
+        // Print leading spaces
+        for (int i = 1; i < startDay; i++) {
+            System.out.print("   ");
+        }
+
+        // Print the days of the month
+        for (int i = 1; i <= numDays; i++) {
+            System.out.printf("%3d", i);
+
+            // Start a new line after Saturdays
+            if (startDay == Calendar.SATURDAY && i < numDays) {
+                System.out.println();
+
+            }
+
+            // Increment the day
+            calendar.add(Calendar.DAY_OF_MONTH, 1);
+            startDay = calendar.get(Calendar.DAY_OF_WEEK);
+        }
+
+        System.out.println();
         String choice;
         do {
-            System.out.println("---------------------------------------");  
+            System.out.println("---------------------------------------");
             System.out.println("==== Welcome to car rental program ====");
-            System.out.println("1.Rental car");
-            System.out.println("2.Exit");
-            System.out.println("Select number[1-2] :");
+            System.out.println("1. Go to Rent Car");
+            System.out.println("2. Go to Mala Store");
+            System.out.println("3.No thanks");
+
+            System.out.println("Select number[1-3] :");
             choice = input.next();
 
             // Input validation for menu selection
-            while (!choice.matches("[1-2]")) {
+            while (!choice.matches("[1-3]")) {
                 System.out.println("Invalid input. Please select a valid option [1-2]: ");
                 choice = input.next();
             }
@@ -44,7 +89,7 @@ public class Main {
                     System.out.println("Invalid input. Please enter a valid name: ");
                     name = input.next();
                 }
-            
+
 
                 System.out.print(" Phone Number  :  ");
                 String phone;
@@ -62,8 +107,8 @@ public class Main {
                         "Select number[1,2] : ");
                 choice = input.next();
 
-                 // Input validation for membership selection
-                 while (!choice.matches("[1-2]")) {
+                // Input validation for membership selection
+                while (!choice.matches("[1-2]")) {
                     System.out.println("Invalid input. Please select a valid option [1-2]: ");
                     choice = input.next();
                 }
@@ -96,28 +141,29 @@ public class Main {
                 boolean validChoice = false;
                 while (!validChoice) {
                     choice = input.next();
-                // Input validation for choice
-                if (choice.matches("[1-4]")) {
-                    validChoice = true;
-                } else {
-                System.out.println("Invalid input. Please select a valid option [1-4]: ");
+                    // Input validation for choice
+                    if (choice.matches("[1-4]")) {
+                        validChoice = true;
+                    } else {
+                        System.out.println("Invalid input. Please select a valid option [1-4]: ");
+                    }
                 }
-                }
+                ArrayList<Car> cartest = new ArrayList<>();
+
+                cartest.add(car);
 
                 Deposit deposit = new Deposit(choice);
-                if (choice.equals("1")) {
-                    car = new HiendCar();
-                } else if (choice.equals("2")) {
-                    car = new PickupTruck();
-                } else if (choice.equals("3")) {
-                    car = new NormalCar();
-                } else if (choice.equals("4")) {
-                    car = new EVCar();
+                switch (choice) {
+                    case "1" -> car = new HiendCar();
+                    case "2" -> car = new PickupTruck();
+                    case "3" -> car = new NormalCar();
+                    case "4" -> car = new EVCar();
                 }
 
                 System.out.println("Select Car's Brand that you want to rent : ");
                 choice = input.next();
-                
+
+
                 // Input validation for car brand choice
                 while (!choice.matches("[1-9]")) {
                     System.out.println("Invalid input. Please select a valid option [1-9]: ");
@@ -125,40 +171,47 @@ public class Main {
                 }
                 car.setPick(choice);
 
+                cartest.remove(car);
+
                 System.out.println("Do you want to add Car's accessory?? : \n1. Yes\n2. No");
                 choice = input.next();
-                
+
                 // Input validation for choice of adding car accessories
                 while (!choice.matches("[1-2]")) {
                     System.out.println("Invalid input. Please select a valid option [1-2]: ");
                     choice = input.next();
                 }
-                
+
                 CarAccessories acces = new CarAccessories();
                 if (choice.equals("1")) {
+                    label:
                     do {
                         acces.getCarAccesMenu();
                         choice = input.next();
-                
+
                         // Input validation for accessory choice
                         while (!choice.matches("[1-4]")) {
                             System.out.println("Invalid input. Please select a valid option [1-4]: ");
                             choice = input.next();
                         }
-                
-                        if (choice.equals("1")) {
-                            car = new Exhaust(car);
-                        } else if (choice.equals("2")) {
-                            car = new Wheels(car);
-                        } else if (choice.equals("3")) {
-                            car = new Wrap(car);
-                        } else if (choice.equals("4")) {
-                            break;
+
+                        switch (choice) {
+                            case "1":
+                                car = new Exhaust(car);
+                                break;
+                            case "2":
+                                car = new Wheels(car);
+                                break;
+                            case "3":
+                                car = new Wrap(car);
+                                break;
+                            case "4":
+                                break label;
                         }
                     } while (true);
                 }
-                
-                
+
+
                 System.out.println("---------------------------------------");
                 System.out.println("Enter the number of days you want to rent : ");
 
@@ -184,6 +237,8 @@ public class Main {
                                 "\nDeposit : " + deposit.getdeposit());
                 pay.displayPayment();
                 System.out.println("---------------------------------------");
+
+
             }
             else {
                 break;
@@ -199,4 +254,5 @@ public class Main {
      * บรรทัดที่ 113 ควรเป็นจำนวนเต็ม ติดลบไม่ได้ ตัวอักษรไม่ได้  ถ้าไม่ใช่ให้วนกรอกใหม่ /
      */
 
-    }           
+}
+

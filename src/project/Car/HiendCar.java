@@ -24,7 +24,6 @@ public class HiendCar extends Car {
     }
     @Override
     public String getDesp() {
-
         return brand;
     }
     @Override
