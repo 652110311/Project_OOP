@@ -8,6 +8,6 @@ public class Chicken extends Mala{
 
     @Override
     public int calculate() {
-        return ;
+        return 0;
     }
 }
