@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 public class Receipt {
     public Receipt(String customer,String paymentInformation,String car,double deposit,String name) throws FileNotFoundException {
         //output file name
-        String encryptedFile = "C:\\Users\\CAMT\\Desktop\\Project_oop_car_rent\\src\\project\\Bill\\receipt_"+name+".txt";
+        String encryptedFile = "C:\\Users\\CAMT\\Desktop\\Project_oop_car_rent\\src\\project\\receipt_"+name+".txt";
         // open output file
         File outputFile = new File(encryptedFile);
         PrintWriter output = new PrintWriter(outputFile);
