@@ -35,4 +35,6 @@ public class Member extends Customer {
 
         return this.customerAddress;
     }
+
+
 }

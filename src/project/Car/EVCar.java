@@ -49,7 +49,7 @@ public class EVCar extends Car {
     }
         public double getCost () {
 
-        return 1000;
+        return 2000;
         }
 
 }

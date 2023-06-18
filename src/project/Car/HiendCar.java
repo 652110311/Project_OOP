@@ -28,7 +28,7 @@ public class HiendCar extends Car {
     }
     @Override
     public double getCost() {
-        return 10000;
+        return 50000;
     }
     @Override
     public void setbrand(String pick) {

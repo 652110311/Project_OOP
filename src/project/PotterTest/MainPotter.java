@@ -11,9 +11,9 @@ import project.Customer.NonMember;
 import project.Rent.Deposit;
 import project.Rent.Payment;
 
-import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.Calendar;
+import java.util.Scanner;
+import java.util.Vector;
 
 
 public class MainPotter {
@@ -63,6 +63,19 @@ public class MainPotter {
             startDay = calendar.get(Calendar.DAY_OF_WEEK);
         }
 
+        final String Red = "\u001b[31m";
+        final String White="\u001b[0m";
+        int pig=100;
+        int chicken=100;
+        int dolly_fish=100;
+        int beef=100;
+        int corn = 100;
+        int broccoli=100;
+
+
+        Vector<Member> members = new Vector<>();
+
+
         System.out.println();
         String choice;
         do {
@@ -70,14 +83,14 @@ public class MainPotter {
             System.out.println("==== Welcome to car rental program ====");
             System.out.println("1. Go to Rent Car");
             System.out.println("2. Go to Mala Store");
-            System.out.println("3.No thanks");
+            System.out.println("3. No thanks");
 
             System.out.println("Select number[1-3] :");
             choice = input.next();
 
             // Input validation for menu selection
             while (!choice.matches("[1-3]")) {
-                System.out.println("Invalid input. Please select a valid option [1-2]: ");
+                System.out.println("Invalid input. Please select a valid option [1-3]: ");
                 choice = input.next();
             }
 
@@ -115,6 +128,7 @@ public class MainPotter {
 
                 Customer customer = null;
 
+
                 if (choice.equals("1")) {
                     System.out.println("---------------------------------------");
                     System.out.println("==========  Register member =========== ");
@@ -129,7 +143,23 @@ public class MainPotter {
                     String address = input.next();
                     customer = new Member(name, phone, email, address);
 
-                }   else if (choice.equals("2")) {
+                    //Test Vector
+
+
+                    System.out.println("Registered Members:");
+                    for (Member member : members) {
+                        System.out.println("Name: " + member.getName());
+                        System.out.println("Phone: " + member.getPhone());
+                        System.out.println("Email: " + member.getCustomerEmail());
+                        System.out.println("Address: " + member.getCustomerAddress());
+                        System.out.println("--------------------");
+                    }
+
+
+
+
+                }
+                else if (choice.equals("2")) {
                     customer = new NonMember(name, phone);
 
                 }
@@ -148,9 +178,7 @@ public class MainPotter {
                         System.out.println("Invalid input. Please select a valid option [1-4]: ");
                     }
                 }
-                ArrayList<Car> cartest = new ArrayList<>();
 
-                cartest.add(car);
 
                 Deposit deposit = new Deposit(choice);
                 switch (choice) {
@@ -171,7 +199,7 @@ public class MainPotter {
                 }
                 car.setPick(choice);
 
-                cartest.remove(car);
+
 
                 System.out.println("Do you want to add Car's accessory?? : \n1. Yes\n2. No");
                 choice = input.next();
@@ -240,7 +268,79 @@ public class MainPotter {
 
 
             }
-            else {
+            else if(choice.equals("2")){
+
+                    //make in oop concept
+                   /* Vector<Mala> mala = new Vector<>();
+                    System.out.println("What do you want to eat?\n" +
+                        "Everything are 5 Bath per 1 piece\n" +
+                        "1.Chicken            "+Red+chicken+" pieces"+White+"    5 Bath"+"\n" +
+                        "2.Pig                "+Red+pig+" pieces"+White+"     5 Bath"+"\n" +
+                        "3.Dolly fish         "+Red+dolly_fish+" pieces"+White+"     5 Bath"+"\n" +
+                        "4.Beef               "+Red+beef+" pieces"+White+"     5 Bath"+"\n" +
+                        "5.Corn               "+Red+corn+" pieces"+White+"     5 Bath"+"\n" +
+                        "6.Broccoli           "+Red+broccoli+" pieces"+White+"     5 Bath"+"\n" +
+                        "7.That's it");
+                System.out.println("Pick number[1-7]");
+                int pick = input.nextInt();
+                if(pick==7) break;
+                System.out.println("How many piece you want");
+                int amountpiece = input.nextInt();*/
+
+
+
+
+
+
+                   /* int amountpiece=0;
+                    int total=0;
+                    while (true){
+                    System.out.println("What do you want to eat?\n" +
+                            "Everything are 5 Bath per 1 piece\n" +
+                            "1.Chicken            "+Red+chicken+" pieces"+White+"    5 Bath"+"\n" +
+                            "2.Pig                "+Red+pig+" pieces"+White+"     5 Bath"+"\n" +
+                            "3.Dolly fish         "+Red+dolly_fish+" pieces"+White+"     5 Bath"+"\n" +
+                            "4.Beef               "+Red+beef+" pieces"+White+"     5 Bath"+"\n" +
+                            "5.Corn               "+Red+corn+" pieces"+White+"     5 Bath"+"\n" +
+                            "6.Broccoli           "+Red+broccoli+" pieces"+White+"     5 Bath"+"\n" +
+                            "7.That's it");
+                    System.out.println("Pick number[1-7]");
+                    int pick = input.nextInt();
+                    if(pick==7) break;
+                    System.out.println("How many piece you want");
+                    amountpiece = input.nextInt();
+                    if (pick == 1){
+                        total = pick*amountpiece;
+                        chicken=chicken-amountpiece;
+                        amountpiece=0;
+                    }else if (pick == 2){
+                        total = pick*amountpiece;
+                        pig = pig-amountpiece;
+                        amountpiece=0;
+                    }else if (pick == 3){
+                        total = pick*amountpiece;
+                        dolly_fish= dolly_fish-amountpiece;
+                        amountpiece=0;
+                    }else if (pick == 4){
+                        total = pick*amountpiece;
+                        beef = beef-amountpiece;
+                        amountpiece=0;
+                    }else if (pick == 5){
+                        total = pick*amountpiece;
+                        corn =corn-amountpiece;
+                        amountpiece=0;
+                    }else if (pick == 6){
+                        total = pick*amountpiece;
+                        broccoli = broccoli-amountpiece;
+                        amountpiece=0;
+                    }
+
+                }
+                System.out.println("Here you are");
+                System.out.println("It's "+total*5+" Bath");*/
+
+            }
+            else{
                 break;
             }
         }while (true);
