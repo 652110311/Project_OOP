@@ -11,11 +11,14 @@ import project.Customer.NonMember;
 import project.Rent.Deposit;
 import project.Rent.Payment;
 
+
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+
 //        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 //        Date currentDate = new Date();
 //         System.out.println(currentDate);
@@ -179,11 +182,10 @@ public class Main {
                 } while (!validDuration);
                 Payment pay = new Payment(day, car.getCost(), customer.getDiscount(), deposit.getdeposit());
                 customer.getDescribe();
-                System.out.println(
-                        "\nCar rental : " + car.getDesp() +
-                                "\nDeposit : " + deposit.getdeposit());
+
                 pay.displayPayment();
                 System.out.println("---------------------------------------");
+                Receipt receipt = new Receipt(customer.customerDescribe(), pay.getDisplayPayment(),car.getDesp(),deposit.getdeposit(),customer.getName());
             }
             else {
                 break;
@@ -199,4 +201,4 @@ public class Main {
      * บรรทัดที่ 113 ควรเป็นจำนวนเต็ม ติดลบไม่ได้ ตัวอักษรไม่ได้  ถ้าไม่ใช่ให้วนกรอกใหม่ /
      */
 
-    }           
+    }

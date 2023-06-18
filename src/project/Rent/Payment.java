@@ -46,6 +46,14 @@ public class Payment {
                 "\nDeposit : "+deposit+
                 "\nTotal payment : "+getTotalPayment());
     }
+
+    public String getDisplayPayment(){
+        return "Rent : "+day +" day"+ "\nCost per Day : "+costPerDay +" baht"+
+                "\nPayment : "+pay+
+                "\nTotal discount  "+getDiscount()+"% : "+getTotalDiscount()+" baht"+
+                "\nDeposit : "+deposit+
+                "\nTotal payment : "+getTotalPayment();
+    }
 }
 
 

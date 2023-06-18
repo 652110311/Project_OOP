@@ -39,6 +39,13 @@ public abstract class Customer {
                         "\nStatus : " + getStatus() +
                         "\nDiscount : " + (getDiscount()*100)+"%");
         }
+        public String customerDescribe()
+        {
+                return "Customer's name : " + getName() +
+                        "\nPhone number : " + getPhone() +
+                        "\nStatus : " + getStatus() +
+                        "\nDiscount : " + (getDiscount()*100)+"%";
+        }
         public void getCarTypeMenu()
         {
                 System.out.println("---------------------------------------");

@@ -2,6 +2,7 @@ package project.Rent;
 
 public class Deposit {
     private String choice;
+
     double price;
     public Deposit(String choice){
         this.choice=choice;
@@ -21,6 +22,13 @@ public class Deposit {
             price=700;
         }
         return price;
+    }
+    public String getChoice()
+    {
+        return this.choice;   }
+
+    public void setChoice(String choice) {
+        this.choice = choice;
     }
 }
 
