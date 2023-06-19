@@ -3,7 +3,13 @@ package project.Mala;
 public class Pig extends Mala{
     @Override
     public int getcost() {
-        return 0;
+        return 10;
+    }
+
+    @Override
+    public int calculate(int piece) {
+        price = getTotalprice()+getcost()*piece;
+        return getcost()*piece;
     }
 
     @Override

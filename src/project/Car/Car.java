@@ -15,7 +15,7 @@ public abstract class Car {
     }
 
     public String getDesp() {
-        return description;
+        return description+"\n";
     }
 
     public abstract double getCost();

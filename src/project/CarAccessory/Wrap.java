@@ -9,7 +9,7 @@ public class Wrap extends CarAccessories{
     }
     @Override
     public String getDesp() {
-        return this.car.getDesp()+", Wrap ";
+        return this.car.getDesp()+"\nAccessory: Wrap";
     }
     @Override
     public double getCost() {

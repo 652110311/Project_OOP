@@ -8,6 +8,7 @@ import project.CarAccessory.Wrap;
 import project.Customer.Customer;
 import project.Customer.Member;
 import project.Customer.NonMember;
+import project.Mala.*;
 import project.Rent.Deposit;
 import project.Rent.Payment;
 
@@ -115,6 +116,7 @@ public class MainPotter {
                 } while (phone.length() != 10);
 
                 System.out.print(" You aren't a member !! Do you want to register as a member??\n" +
+                        "" +
                         "1.Yes, I want to register a member. \n" +
                         "2.No,I am satisfied with non-member.\n" +
                         "Select number[1,2] : ");
@@ -269,32 +271,9 @@ public class MainPotter {
 
             }
             else if(choice.equals("2")){
-
+                Mala mala = null;
                     //make in oop concept
-                   /* Vector<Mala> mala = new Vector<>();
-                    System.out.println("What do you want to eat?\n" +
-                        "Everything are 5 Bath per 1 piece\n" +
-                        "1.Chicken            "+Red+chicken+" pieces"+White+"    5 Bath"+"\n" +
-                        "2.Pig                "+Red+pig+" pieces"+White+"     5 Bath"+"\n" +
-                        "3.Dolly fish         "+Red+dolly_fish+" pieces"+White+"     5 Bath"+"\n" +
-                        "4.Beef               "+Red+beef+" pieces"+White+"     5 Bath"+"\n" +
-                        "5.Corn               "+Red+corn+" pieces"+White+"     5 Bath"+"\n" +
-                        "6.Broccoli           "+Red+broccoli+" pieces"+White+"     5 Bath"+"\n" +
-                        "7.That's it");
-                System.out.println("Pick number[1-7]");
-                int pick = input.nextInt();
-                if(pick==7) break;
-                System.out.println("How many piece you want");
-                int amountpiece = input.nextInt();*/
-
-
-
-
-
-
-                   /* int amountpiece=0;
-                    int total=0;
-                    while (true){
+                while (true){
                     System.out.println("What do you want to eat?\n" +
                             "Everything are 5 Bath per 1 piece\n" +
                             "1.Chicken            "+Red+chicken+" pieces"+White+"    5 Bath"+"\n" +
@@ -305,39 +284,37 @@ public class MainPotter {
                             "6.Broccoli           "+Red+broccoli+" pieces"+White+"     5 Bath"+"\n" +
                             "7.That's it");
                     System.out.println("Pick number[1-7]");
+
+
                     int pick = input.nextInt();
-                    if(pick==7) break;
-                    System.out.println("How many piece you want");
-                    amountpiece = input.nextInt();
-                    if (pick == 1){
-                        total = pick*amountpiece;
-                        chicken=chicken-amountpiece;
-                        amountpiece=0;
-                    }else if (pick == 2){
-                        total = pick*amountpiece;
-                        pig = pig-amountpiece;
-                        amountpiece=0;
-                    }else if (pick == 3){
-                        total = pick*amountpiece;
-                        dolly_fish= dolly_fish-amountpiece;
-                        amountpiece=0;
-                    }else if (pick == 4){
-                        total = pick*amountpiece;
-                        beef = beef-amountpiece;
-                        amountpiece=0;
-                    }else if (pick == 5){
-                        total = pick*amountpiece;
-                        corn =corn-amountpiece;
-                        amountpiece=0;
-                    }else if (pick == 6){
-                        total = pick*amountpiece;
-                        broccoli = broccoli-amountpiece;
-                        amountpiece=0;
+                    if (pick==1) {
+                        mala = new Chicken();
+                    }
+                    else if(pick==2){
+                        mala = new Chicken();
+                    }
+                    else if(pick==3){
+                        mala = new Dollyfish();
+                    }
+                    else if (pick==4){
+                        mala = new Beef();
+                    }
+                    else if(pick ==5){
+                        mala = new Corn();
+                    }
+                    else if(pick==6){
+                        mala = new Broccoli();
                     }
 
+                    if(pick==7) break;
+                    System.out.println("How many piece you want");
+                    int amountpiece = input.nextInt();
+
+
+                    System.out.println(mala.calculate(amountpiece));
+
                 }
-                System.out.println("Here you are");
-                System.out.println("It's "+total*5+" Bath");*/
+                System.out.println(mala.getTotalprice());
 
             }
             else{

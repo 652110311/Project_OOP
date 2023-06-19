@@ -7,7 +7,13 @@ public class Beef extends Mala{
     }
 
     @Override
+    public int calculate(int piece) {
+        price = getTotalprice()+getcost()*piece;
+        return getcost()*piece;
+    }
+
+    @Override
     public int calculate() {
-        return getcost();
+        return 0;
     }
 }

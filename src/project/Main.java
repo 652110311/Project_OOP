@@ -10,15 +10,16 @@ import project.Customer.Member;
 import project.Customer.NonMember;
 import project.Rent.Deposit;
 import project.Rent.Payment;
-
-
+import java.util.Vector;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
 
+    public static void main(String[] args) throws FileNotFoundException {
+        final String Red = "\u001b[31m";
+        final String White="\u001b[0m";
 //        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 //        Date currentDate = new Date();
 //         System.out.println(currentDate);
@@ -28,14 +29,15 @@ public class Main {
         do {
             System.out.println("---------------------------------------");  
             System.out.println("==== Welcome to car rental program ====");
-            System.out.println("1.Rental car");
+            System.out.println("1.Go Rent Car");
             System.out.println("2.Exit");
             System.out.println("Select number[1-2] :");
             choice = input.next();
 
+            Vector<Customer> customers = new Vector<>();
             // Input validation for menu selection
             while (!choice.matches("[1-2]")) {
-                System.out.println("Invalid input. Please select a valid option [1-2]: ");
+                System.out.println(Red+"Invalid input. Please select a valid option [1-2]: "+White);
                 choice = input.next();
             }
 
@@ -44,7 +46,7 @@ public class Main {
                 String name = input.next();
 
                 while (!name.matches("[a-zA-Z]+")) {
-                    System.out.println("Invalid input. Please enter a valid name: ");
+                    System.out.println(Red+"Invalid input. Please enter a valid name: "+White);
                     name = input.next();
                 }
             
@@ -55,11 +57,13 @@ public class Main {
                     System.out.print(" Phone Number (10 digits):  ");
                     phone = input.next();
                     if (phone.length() != 10) {
-                        System.out.println("Invalid phone number. Please enter a 10-digit phone number.");
+                        System.out.println(Red+"Invalid phone number. Please enter a 10-digit phone number."+White);
                     }
                 } while (phone.length() != 10);
 
-                System.out.print(" You aren't a member !! Do you want to register as a member??\n" +
+                System.out.println("-------------------------------------------------------------");
+                System.out.print(" You aren't a member !!!! Do you want to register as a member??\n" +
+                                   "-------------------------------------------------------------\n" +
                         "1.Yes, I want to register a member. \n" +
                         "2.No,I am satisfied with non-member.\n" +
                         "Select number[1,2] : ");
@@ -67,11 +71,12 @@ public class Main {
 
                  // Input validation for membership selection
                  while (!choice.matches("[1-2]")) {
-                    System.out.println("Invalid input. Please select a valid option [1-2]: ");
+                    System.out.println(Red+"Invalid input. Please select a valid option [1-2]: "+White);
                     choice = input.next();
                 }
 
                 Customer customer = null;
+
 
                 if (choice.equals("1")) {
                     System.out.println("---------------------------------------");
@@ -80,15 +85,19 @@ public class Main {
                     //Input validation for email ignore uppercase and lowercase
                     String email = input.next().toLowerCase();
                     while (!email.matches("[a-zA-Z0-9._%+-]+@gmail.com")) {
-                        System.out.println("Invalid input. Please enter a valid Gmail address: ");
+                        System.out.println(Red+"Invalid input. Please enter a valid Gmail address: "+White);
                         email = input.next().toLowerCase();
                     }
                     System.out.print(" Enter address  :  ");
                     String address = input.next();
                     customer = new Member(name, phone, email, address);
+                    customers.add(customer);
+
 
                 }   else if (choice.equals("2")) {
                     customer = new NonMember(name, phone);
+                    customers.add(customer);
+
 
                 }
 
@@ -103,7 +112,7 @@ public class Main {
                 if (choice.matches("[1-4]")) {
                     validChoice = true;
                 } else {
-                System.out.println("Invalid input. Please select a valid option [1-4]: ");
+                System.out.println(Red+"Invalid input. Please select a valid option [1-4]: "+White);
                 }
                 }
 
@@ -123,7 +132,7 @@ public class Main {
                 
                 // Input validation for car brand choice
                 while (!choice.matches("[1-9]")) {
-                    System.out.println("Invalid input. Please select a valid option [1-9]: ");
+                    System.out.println(Red+"Invalid input. Please select a valid option [1-9]: "+White);
                     choice = input.next();
                 }
                 car.setPick(choice);
@@ -133,7 +142,7 @@ public class Main {
                 
                 // Input validation for choice of adding car accessories
                 while (!choice.matches("[1-2]")) {
-                    System.out.println("Invalid input. Please select a valid option [1-2]: ");
+                    System.out.println(Red+"Invalid input. Please select a valid option [1-2]: "+White);
                     choice = input.next();
                 }
                 
@@ -145,7 +154,7 @@ public class Main {
                 
                         // Input validation for accessory choice
                         while (!choice.matches("[1-4]")) {
-                            System.out.println("Invalid input. Please select a valid option [1-4]: ");
+                            System.out.println(Red+"Invalid input. Please select a valid option [1-4]: "+White);
                             choice = input.next();
                         }
                 
@@ -170,14 +179,14 @@ public class Main {
                 boolean validDuration = false;
                 do {
                     while (!input.hasNextInt()) {
-                        System.out.println("Invalid input. Please enter a valid number of days: ");
+                        System.out.println(Red+"Invalid input. Please enter a valid number of days: "+White);
                         input.next();
                     }
                     day = input.nextInt();
                     if (day > 0) {
                         validDuration = true;
                     } else {
-                        System.out.println("Invalid input. Please enter a positive number of days: ");
+                        System.out.println(Red+"Invalid input. Please enter a positive number of days: "+White);
                     }
                 } while (!validDuration);
                 Payment pay = new Payment(day, car.getCost(), customer.getDiscount(), deposit.getdeposit());
