@@ -40,9 +40,9 @@ public class Main {
             System.out.println("Select number[1-2] :");
             choice = input.next();
 
-            // Input validation for menu selection
+            // Input validation for menu , name and phone selection
             while (!choice.matches("[1-2]")) {
-                System.out.println("Invalid input. Please select a valid option [1-2]: ");
+                System.out.println("Invalid input. Please select a option [1-2]: ");
                 choice = input.next();
             }
 
@@ -55,16 +55,14 @@ public class Main {
                     name = input.next();
                 }
             
-
-                System.out.print(" Phone Number  :  ");
                 String phone;
                 do {
                     System.out.print(" Phone Number (10 digits):  ");
                     phone = input.next();
                     if (phone.length() != 10) {
                         System.out.println("Invalid phone number. Please enter a 10-digit phone number.");
-                    }
-                } while (phone.length() != 10);
+                    }       
+                } while (phone.length() != 10); //false => end loop     
 
                 System.out.print(" You aren't a member !! Do you want to register as a member??\n" +
                         "1.Yes, I want to register a member. \n" +
@@ -186,7 +184,7 @@ public class Main {
                     } else {
                         System.out.println("Invalid input. Please enter a positive number of days: ");
                     }
-                } while (!validDuration);
+                } while (!validDuration);  
                 Payment pay = new Payment(day, car.getCost(), customer.getDiscount(), deposit.getdeposit());
                 customer.getDescribe();
                 System.out.println(
@@ -198,7 +196,7 @@ public class Main {
             else {
                 break;
             }
-        }while (true);
+        }while (true); 
     }
     /** error
      * เลขที่เลือกแต่ละคำถาม ถ้ากดเลขที่นอกเหนือจากตัวเลือก หรือ ติดลบ หรือ เป็นตัวอักษร ให้วนกรอกใหม่ บรรทัดที่ 41,53,91

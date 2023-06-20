@@ -3,8 +3,8 @@ package project.Rent;
 public class Deposit {
     private String choice;
     double price;
-    public Deposit(String choice){
 
+    public Deposit(String choice){
         this.choice=choice;
     }
 
