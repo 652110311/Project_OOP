@@ -4,6 +4,8 @@ public class EVCar extends Car {
     protected String pick;
     protected String brand;
 
+
+
     public EVCar() {
         System.out.println("EV Car" +
                 "\n1. Tesla Model 3" +
@@ -16,6 +18,7 @@ public class EVCar extends Car {
                 "\n8. BYD Dolphin" +
                 "\n9. BYD Seal");
     }
+
     public void setPick(String pick){
         super.setPick(pick);
         setbrand(pick);
@@ -34,6 +37,10 @@ public class EVCar extends Car {
             case "9" -> brand = " EV Car BYD Seal ";
         }
 
+
+    }
+    public void getStatus(){
+        super.setStatus();
     }
 
     public String getDesp() {
@@ -42,7 +49,7 @@ public class EVCar extends Car {
     }
         public double getCost () {
 
-        return 1000;
+        return 2000;
         }
 
 }
